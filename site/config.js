@@ -1,7 +1,7 @@
 // Réglages du site : à adapter une seule fois ici, toutes les pages en profitent.
 window.OBSILAN = {
   /** Dernière version publiée. */
-  version: '0.5.0',
+  version: '0.6.0',
   /** Page des téléchargements (GitHub Releases du dépôt). */
   releases: 'https://github.com/FrenGlish1/obsilan/releases/latest',
   /** Liens directs vers les fichiers de la dernière version. */
