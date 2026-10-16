@@ -1,0 +1,277 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Mise en forme — ObsiLan</title>
+  <meta name="description" content="Toutes les mises en forme reconnues par ObsiLan : titres, gras, listes, cases à cocher, liens entre notes, tags, images, encadrés, tableaux, code…" />
+  <link rel="icon" href="assets/logo.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="style.css" />
+  <script src="config.js"></script>
+</head>
+<body>
+  <header class="top">
+    <div class="wrap">
+      <a class="brand" href="./"><img src="assets/logo.svg" alt="" />ObsiLan</a>
+      <nav aria-label="Navigation principale">
+        <a href="./">Accueil</a>
+        <a href="installation.html">Installation</a>
+        <a href="mise-en-forme.html" aria-current="page">Mise en forme</a>
+        <a href="notes-de-version.html">Nouveautés</a>
+        <a href="confidentialite.html">Confidentialité</a>
+        <a href="conditions.html">Conditions</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="page guide">
+    <h1>Mise en forme</h1>
+    <p class="updated">
+      Tout ce que l'on peut écrire dans une note ObsiLan. Pour chaque élément, à gauche ce qu'il faut taper, à droite le résultat
+      en mode lecture. Ces syntaxes sont celles d'Obsidian : vos notes restent compatibles.
+    </p>
+    <p>
+      Dans l'application, ce guide existe aussi sous forme de note : bouton <strong>Guide</strong> en bas de la barre latérale,
+      ou palette de commandes (<kbd>Ctrl</kbd>+<kbd>P</kbd>) → « Guide de mise en forme ».
+      Passez en lecture avec l'<strong>œil</strong>, en modification avec le <strong>stylo</strong> (ou <kbd>Ctrl</kbd>+<kbd>E</kbd>).
+    </p>
+
+    <nav class="toc" aria-label="Sommaire">
+      <ul>
+        <li><a href="#titres">Titres</a> · <a href="#texte">Texte</a> · <a href="#listes">Listes</a> · <a href="#cases">Cases à cocher</a></li>
+        <li><a href="#liens">Liens entre notes</a> · <a href="#web">Liens web</a> · <a href="#tags">Tags</a> · <a href="#fichiers">Images et fichiers</a></li>
+        <li><a href="#citations">Citations</a> · <a href="#encadres">Encadrés</a> · <a href="#tableaux">Tableaux</a> · <a href="#code">Code</a></li>
+        <li><a href="#separateur">Séparateur</a> · <a href="#commentaires">Commentaires</a> · <a href="#proprietes">Propriétés</a> · <a href="#modeles">Modèles</a> · <a href="#raccourcis">Raccourcis</a></li>
+      </ul>
+    </nav>
+
+    <h2 id="titres">Titres</h2>
+    <div class="demo">
+      <pre># Titre 1
+## Titre 2
+### Titre 3</pre>
+      <div class="result">
+        <div class="r-h1">Titre 1</div>
+        <div class="r-h2">Titre 2</div>
+        <div class="r-h3">Titre 3</div>
+      </div>
+    </div>
+    <p>De <code>#</code> à <code>######</code> : six niveaux. Mettez un espace après les <code>#</code>.</p>
+
+    <h2 id="texte">Texte</h2>
+    <div class="table-scroll">
+      <table>
+        <thead><tr><th>Ce que vous tapez</th><th>Résultat</th></tr></thead>
+        <tbody>
+          <tr><td><code>**gras**</code></td><td><strong>gras</strong></td></tr>
+          <tr><td><code>*italique*</code></td><td><em>italique</em></td></tr>
+          <tr><td><code>***gras et italique***</code></td><td><strong><em>gras et italique</em></strong></td></tr>
+          <tr><td><code>~~barré~~</code></td><td><del>barré</del></td></tr>
+          <tr><td><code>==surligné==</code></td><td><mark>surligné</mark></td></tr>
+          <tr><td><code>`code`</code></td><td><code>code</code></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>Un paragraphe se termine par une <strong>ligne vide</strong>. Un simple retour à la ligne continue le même paragraphe.</p>
+
+    <h2 id="listes">Listes</h2>
+    <div class="demo">
+      <pre>- une puce
+- une autre
+  - une sous-puce
+
+1. premier
+2. deuxième</pre>
+      <div class="result">
+        <ul><li>une puce</li><li>une autre<ul><li>une sous-puce</li></ul></li></ul>
+        <ol><li>premier</li><li>deuxième</li></ol>
+      </div>
+    </div>
+    <p>Pour une sous-puce, mettez deux espaces (ou une tabulation) devant le tiret.</p>
+
+    <h2 id="cases">Cases à cocher</h2>
+    <div class="demo">
+      <pre>- [ ] à faire
+- [x] fait</pre>
+      <div class="result">
+        <ul class="tasks"><li><input type="checkbox" disabled /> à faire</li><li><input type="checkbox" checked disabled /> fait</li></ul>
+      </div>
+    </div>
+
+    <h2 id="liens">Liens entre notes</h2>
+    <div class="table-scroll">
+      <table>
+        <thead><tr><th>Ce que vous tapez</th><th>Résultat</th></tr></thead>
+        <tbody>
+          <tr><td><code>[[Recettes]]</code></td><td><span class="wl">Recettes</span></td></tr>
+          <tr><td><code>[[Recettes|mes recettes]]</code></td><td><span class="wl">mes recettes</span> (texte affiché différent)</td></tr>
+          <tr><td><code>[[Recettes#Desserts]]</code></td><td><span class="wl">Recettes#Desserts</span> (vers un titre de la note)</td></tr>
+          <tr><td><code>[[Note pas encore écrite]]</code></td><td><span class="wl missing">Note pas encore écrite</span> (note à créer)</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <ul>
+      <li>Tapez <code>[[</code> : l'application propose les notes existantes.</li>
+      <li>Un lien vers une note qui n'existe pas encore apparaît en pâle ; un clic la crée.</li>
+      <li>En mode modification, <kbd>Ctrl</kbd>+clic ouvre le lien.</li>
+      <li>Renommer ou déplacer une note met à jour tous les liens qui y mènent.</li>
+      <li>Les <strong>rétroliens</strong>, sous chaque note, listent les notes qui pointent vers elle ; le <strong>graphe</strong> les dessine.</li>
+    </ul>
+
+    <h2 id="web">Liens web</h2>
+    <div class="table-scroll">
+      <table>
+        <thead><tr><th>Ce que vous tapez</th><th>Résultat</th></tr></thead>
+        <tbody>
+          <tr><td><code>[Obsidian](https://obsidian.md)</code></td><td><a href="https://obsidian.md" rel="noopener">Obsidian</a></td></tr>
+          <tr><td><code>https://obsidian.md</code></td><td><a href="https://obsidian.md" rel="noopener">https://obsidian.md</a></td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h2 id="tags">Tags</h2>
+    <div class="demo">
+      <pre>#recette #projets/maison</pre>
+      <div class="result"><span class="tag">#recette</span> <span class="tag">#projets/maison</span></div>
+    </div>
+    <ul>
+      <li>Un tag commence par <code>#</code>, sans espace. Le <code>/</code> crée des sous-tags.</li>
+      <li>L'onglet <strong>Tags</strong> de la barre latérale les liste tous ; un clic affiche les notes du tag.</li>
+    </ul>
+
+    <h2 id="fichiers">Images et fichiers</h2>
+    <div class="table-scroll">
+      <table>
+        <thead><tr><th>Ce que vous tapez</th><th>Résultat</th></tr></thead>
+        <tbody>
+          <tr><td><code>![[photo.jpg]]</code></td><td>l'image, dans la note</td></tr>
+          <tr><td><code>![[photo.jpg|300]]</code></td><td>l'image, 300 pixels de large</td></tr>
+          <tr><td><code>![[document.pdf]]</code></td><td>le PDF, lisible dans la note</td></tr>
+          <tr><td><code>![[musique.mp3]]</code></td><td>un lecteur audio (ou vidéo pour un .mp4)</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>
+      Pour ajouter un fichier : collez une image (<kbd>Ctrl</kbd>+<kbd>V</kbd>), glissez-déposez-le dans la note, ou menu
+      <strong>⋯</strong> → « Joindre une image ou un fichier » (pratique sur téléphone).
+    </p>
+
+    <h2 id="citations">Citations</h2>
+    <div class="demo">
+      <pre>&gt; Une citation.
+&gt; Sur plusieurs lignes.</pre>
+      <div class="result"><blockquote>Une citation. Sur plusieurs lignes.</blockquote></div>
+    </div>
+
+    <h2 id="encadres">Encadrés</h2>
+    <div class="demo">
+      <pre>&gt; [!note] Titre de l'encadré
+&gt; Le texte de l'encadré.</pre>
+      <div class="result">
+        <div class="callout"><div class="callout-title">Titre de l'encadré</div>Le texte de l'encadré.</div>
+      </div>
+    </div>
+    <p>Sans titre, le type sert de titre. Types reconnus, par couleur :</p>
+    <div class="callouts">
+      <div class="callout"><div class="callout-title">Note</div><code>[!note]</code> <code>[!info]</code> <code>[!todo]</code></div>
+      <div class="callout c-tip"><div class="callout-title">Astuce</div><code>[!tip]</code> <code>[!important]</code></div>
+      <div class="callout c-ok"><div class="callout-title">Réussi</div><code>[!success]</code> <code>[!done]</code></div>
+      <div class="callout c-warn"><div class="callout-title">Attention</div><code>[!warning]</code> <code>[!question]</code></div>
+      <div class="callout c-bad"><div class="callout-title">Danger</div><code>[!danger]</code> <code>[!bug]</code> <code>[!failure]</code></div>
+      <div class="callout c-example"><div class="callout-title">Exemple</div><code>[!example]</code></div>
+      <div class="callout c-quote"><div class="callout-title">Citation</div><code>[!quote]</code></div>
+    </div>
+
+    <h2 id="tableaux">Tableaux</h2>
+    <div class="demo">
+      <pre>| Légume | Semis | Récolte |
+|--------|:-----:|--------:|
+| Tomate | mars  | août    |
+| Radis  | avril | mai     |</pre>
+      <div class="result">
+        <table class="mini">
+          <thead><tr><th>Légume</th><th class="c">Semis</th><th class="r">Récolte</th></tr></thead>
+          <tbody>
+            <tr><td>Tomate</td><td class="c">mars</td><td class="r">août</td></tr>
+            <tr><td>Radis</td><td class="c">avril</td><td class="r">mai</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <p>Les <code>:</code> de la deuxième ligne alignent la colonne : à gauche (<code>:---</code>), au centre (<code>:---:</code>) ou à droite (<code>---:</code>).</p>
+
+    <h2 id="code">Code</h2>
+    <div class="demo">
+      <pre>```js
+function bonjour(nom) {
+  return 'Bonjour ' + nom;
+}
+```</pre>
+      <div class="result">
+        <pre class="code"><span class="k">function</span> <span class="f">bonjour</span>(nom) {
+  <span class="k">return</span> <span class="s">'Bonjour '</span> + nom;
+}</pre>
+      </div>
+    </div>
+    <p>Indiquez le langage après les trois accents graves (<code>js</code>, <code>python</code>, <code>html</code>, <code>css</code>, <code>json</code>, <code>bash</code>…) pour colorer le code.</p>
+
+    <h2 id="separateur">Séparateur</h2>
+    <div class="demo">
+      <pre>---</pre>
+      <div class="result"><hr /></div>
+    </div>
+
+    <h2 id="commentaires">Commentaires</h2>
+    <div class="demo">
+      <pre>%%Note pour moi seul.%%</pre>
+      <div class="result"><span class="muted">(rien : visible seulement en mode modification)</span></div>
+    </div>
+
+    <h2 id="proprietes">Propriétés (en-tête)</h2>
+    <div class="demo">
+      <pre>---
+auteur: Camille
+statut: brouillon
+---</pre>
+      <div class="result"><span class="muted">En toute première ligne de la note. Compatible avec Obsidian, non affiché en mode lecture.</span></div>
+    </div>
+
+    <h2 id="modeles">Modèles et note du jour</h2>
+    <ul>
+      <li><kbd>Alt</kbd>+<kbd>D</kbd> ouvre la note du jour.</li>
+      <li><kbd>Alt</kbd>+<kbd>T</kbd> insère un modèle : une note rangée dans le dossier <strong>Modèles</strong>.</li>
+      <li>Variables des modèles : <code>{{title}}</code>, <code>{{date}}</code>, <code>{{time}}</code>, <code>{{date:dddd D MMMM YYYY}}</code>.</li>
+    </ul>
+
+    <h2 id="raccourcis">Raccourcis utiles</h2>
+    <div class="table-scroll">
+      <table>
+        <thead><tr><th>Raccourci</th><th>Action</th></tr></thead>
+        <tbody>
+          <tr><td><kbd>Ctrl</kbd>+<kbd>P</kbd></td><td>palette de commandes</td></tr>
+          <tr><td><kbd>Ctrl</kbd>+<kbd>O</kbd></td><td>ouvrir une note par son nom</td></tr>
+          <tr><td><kbd>Ctrl</kbd>+<kbd>E</kbd></td><td>basculer lecture / modification</td></tr>
+          <tr><td><kbd>Ctrl</kbd>+<kbd>F</kbd></td><td>chercher dans la note</td></tr>
+          <tr><td><kbd>Ctrl</kbd>+<kbd>Maj</kbd>+<kbd>F</kbd></td><td>chercher dans toutes les notes</td></tr>
+          <tr><td><kbd>Alt</kbd>+<kbd>N</kbd></td><td>nouvelle note</td></tr>
+          <tr><td><kbd>F2</kbd></td><td>renommer la note</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>Tous les raccourcis se changent dans <strong>Paramètres → Raccourcis</strong>.</p>
+  </main>
+
+  <footer class="site">
+    <div class="wrap">
+      <span>© <span class="year">2026</span> ObsiLan</span>
+      <span>
+        <a href="mise-en-forme.html">Mise en forme</a>
+        <a href="notes-de-version.html">Notes de version</a>
+        <a href="confidentialite.html">Politique de confidentialité</a>
+        <a href="conditions.html">Conditions d'utilisation</a>
+        <a data-link="contact" href="#">Contact</a>
+      </span>
+    </div>
+  </footer>
+</body>
+</html>
