@@ -10,12 +10,12 @@ Vos notes sont de simples fichiers `.md` rangés dans un dossier de l'appareil (
 ## Installer les applications
 
 ### Windows
-Lancez `realeses/ObsiLan_x64-setup.exe` : l'installation se fait sans droits administrateur.
+Lancez `releases/ObsiLan_x64-setup.exe` : l'installation se fait sans droits administrateur.
 Au premier lancement, choisissez le dossier des notes : `Documents\ObsiLan`, ou un coffre Obsidian existant.
 Pour changer de dossier plus tard, cliquez sur son nom en bas de la barre latérale.
 
 ### Android
-1. Copiez `realeses/ObsiLan.apk` sur le téléphone et ouvrez-le. Autorisez l'installation d'applications inconnues si Android le demande.
+1. Copiez `releases/ObsiLan.apk` sur le téléphone et ouvrez-le. Autorisez l'installation d'applications inconnues si Android le demande.
 2. Au premier lancement, Android ouvre le réglage **« Accès à tous les fichiers »** : activez-le pour ObsiLan, puis revenez dans l'application.
    Vos notes seront dans `Documents/ObsiLan`, visibles dans l'application « Fichiers ».
 3. Si vous refusez, ObsiLan propose son stockage interne, invisible depuis les autres applications.
