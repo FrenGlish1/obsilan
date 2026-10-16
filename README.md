@@ -20,31 +20,6 @@ Pour changer de dossier plus tard, cliquez sur son nom en bas de la barre latér
    Vos notes seront dans `Documents/ObsiLan`, visibles dans l'application « Fichiers ».
 3. Si vous refusez, ObsiLan propose son stockage interne, invisible depuis les autres applications.
 
-## Compiler
-
-Prérequis, déjà installés sur votre PC : Node.js 20.19+, Rust (rustup), Visual Studio C++, Android Studio (SDK + NDK), JDK 17+.
-
-```bash
-npm install
-npm run app:build        # → installeur Windows .exe
-npm run android:build    # → APK Android signé (arm64)
-```
-
-Autres commandes :
-
-| Commande | Rôle |
-|---|---|
-| `npm run app:dev` | application Windows en mode développement (rechargement à chaud) |
-| `npm run dev` | interface dans un navigateur + serveur Node (développement rapide) |
-| `npm test` / `npm run test:rust` | tests TypeScript / tests Rust |
-| `npm run check` | vérification des types |
-
-L'APK sort dans `src-tauri/gen/android/app/build/outputs/apk/universal/release/` et l'installeur dans `src-tauri/target/release/bundle/nsis/` ; les dernières versions sont copiées dans `livrables/`.
-
-### ⚠️ Clé de signature Android
-L'APK est signé avec `C:\Users\<vous>\.android\obsilan-release.jks`. Le mot de passe est dans `src-tauri/gen/android/keystore.properties`, qui n'est jamais versionné.
-**Sauvegardez ces deux fichiers** : sans eux, impossible d'installer une mise à jour par-dessus l'application existante. Il faudrait la désinstaller, ce qui n'efface pas les notes de `Documents/ObsiLan`.
-
 ## Liens et tags
 
 Même syntaxe qu'Obsidian : un coffre peut être ouvert indifféremment avec les deux applications.
@@ -90,31 +65,3 @@ Les dossiers cachés (`.obsidian`, `.trash`) sont conservés mais ne s'affichent
 | `Ctrl+Maj+F` | rechercher dans toutes les notes |
 | `Alt+N` | nouvelle note |
 | `Ctrl+F` | chercher dans la note |
-
-## Synchronisation (Phase 3)
-
-Le serveur de `livrables/serveur/` tourne sur Pterodactyl, chez vous. Il gère :
-- l'**HTTPS automatique** (Let's Encrypt via DuckDNS) et la mise à jour de l'IP ;
-- la **connexion Discord**, réservée aux identifiants listés dans `allowedUserIds` ;
-- un **espace séparé par compte Discord** (`data/users/<identifiant>/`) : notes, versions archivées, état de synchro.
-  Un utilisateur ne voit jamais les notes d'un autre ;
-- l'**archive** de chaque version remplacée ou supprimée (`data/users/<identifiant>/versions/`).
-
-Mise en service :
-1. Remplissez `livrables/serveur/obsilan.config.json` (DuckDNS, Discord).
-2. Déposez ce fichier et `server.mjs` dans le serveur Pterodactyl (egg Node.js 22, fichier principal `server.mjs`).
-3. Démarrez-le. La console affiche le certificat obtenu et l'adresse de redirection Discord à déclarer.
-
-**Inviter quelqu'un** : demandez-lui son identifiant Discord, ajoutez-le à `allowedUserIds` dans `obsilan.config.json`, puis redémarrez le serveur.
-Son espace est créé à sa première connexion. Pour retirer un accès, enlevez son identifiant : ses appareils ne pourront plus se connecter.
-
-## Site web (GitHub Pages)
-
-Le dossier `site/` contient le site public : présentation, installation, notes de version, conditions d'utilisation et confidentialité.
-
-1. Remplacez les champs `[NOM ET PRÉNOM DE L'ÉDITEUR]` dans `site/conditions.html` et `site/confidentialite.html`.
-2. Mettez à jour `site/config.js` : pseudo GitHub, adresse de contact, version.
-3. Poussez le dépôt sur GitHub, puis dans *Settings → Pages*, choisissez la source **GitHub Actions**.
-   Le workflow `.github/workflows/site.yml` publie le site à chaque modification de `site/`.
-4. Pour chaque version, créez une **Release** GitHub avec deux fichiers nommés exactement
-   `ObsiLan_x64-setup.exe` et `ObsiLan.apk`. Les boutons du site pointent toujours vers la dernière version.
