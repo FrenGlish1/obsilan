@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Installation — ObsiLan</title>
+  <meta name="description" content="Installer ObsiLan sur Windows et Android, puis activer la synchronisation." />
+  <link rel="icon" href="assets/logo.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="style.css" />
+  <script src="config.js"></script>
+</head>
+<body>
+  <header class="top">
+    <div class="wrap">
+      <a class="brand" href="./"><img src="assets/logo.svg" alt="" />ObsiLan</a>
+      <nav aria-label="Navigation principale">
+        <a href="./">Accueil</a>
+        <a href="installation.html" aria-current="page">Installation</a>
+        <a href="notes-de-version.html">Nouveautés</a>
+        <a href="confidentialite.html">Confidentialité</a>
+        <a href="conditions.html">Conditions</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="page">
+    <h1>Installer ObsiLan</h1>
+    <p class="updated">Version actuelle : <span data-text="version">0.4.0</span></p>
+
+    <div class="toc">
+      <ul>
+        <li><a href="#windows">Sur Windows</a></li>
+        <li><a href="#android">Sur Android</a></li>
+        <li><a href="#synchro">Activer la synchronisation</a></li>
+        <li><a href="#obsidian">Reprendre des notes Obsidian</a></li>
+        <li><a href="#maj">Mettre à jour</a></li>
+        <li><a href="#faq">Questions fréquentes</a></li>
+      </ul>
+    </div>
+
+    <h2 id="windows">Sur Windows</h2>
+    <p>Configuration requise : Windows 10 ou 11 (64 bits).</p>
+    <ol class="steps">
+      <li><strong>Téléchargez</strong> l'installeur : <a data-link="windows" href="#">ObsiLan pour Windows (.exe)</a>.</li>
+      <li><strong>Lancez-le.</strong> Windows peut afficher « Windows a protégé votre ordinateur » : l'application n'est pas signée par un éditeur commercial. Cliquez sur <em>Informations complémentaires</em> puis <em>Exécuter quand même</em>. Aucun droit administrateur n'est demandé.</li>
+      <li><strong>Choisissez le dossier de vos notes</strong> au premier lancement : <code>Documents\ObsiLan</code> par défaut, ou un dossier existant.</li>
+    </ol>
+    <p>Pour changer de dossier plus tard, cliquez sur son nom en bas de la barre latérale.</p>
+
+    <h2 id="android">Sur Android</h2>
+    <p>Configuration requise : Android 7 ou plus récent.</p>
+    <ol class="steps">
+      <li><strong>Téléchargez</strong> le fichier depuis le téléphone : <a data-link="android" href="#">ObsiLan pour Android (.apk)</a>.</li>
+      <li><strong>Ouvrez-le</strong> depuis les téléchargements. Android demande d'autoriser l'installation d'applications provenant de cette source (navigateur ou gestionnaire de fichiers) : acceptez, puis touchez <em>Installer</em>.</li>
+      <li><strong>Autorisez l'accès aux fichiers</strong> au premier lancement : Android ouvre le réglage <em>Accès à tous les fichiers</em>. Activez-le pour ObsiLan puis revenez dans l'application. Vos notes seront rangées dans <code>Documents/ObsiLan</code>, visibles dans l'application <em>Fichiers</em>.</li>
+    </ol>
+    <div class="note"><p>Si vous préférez refuser cet accès, ObsiLan propose son stockage interne : tout fonctionne, mais les notes ne sont alors visibles que dans l'application.</p></div>
+    <p>Astuce : sur téléphone, un <strong>appui long</strong> sur une note ou un dossier ouvre le menu (renommer, supprimer…).</p>
+
+    <h2 id="synchro">Activer la synchronisation</h2>
+    <p>La synchronisation garde vos notes identiques sur votre PC et votre téléphone. L'accès se fait sur invitation, avec votre compte Discord.</p>
+    <ol class="steps">
+      <li>Dans ObsiLan, touchez <strong>Synchronisation : non connecté</strong> en bas de la barre latérale.</li>
+      <li>Saisissez l'<strong>adresse du serveur</strong> qui vous a été communiquée.</li>
+      <li>Touchez <strong>Se connecter avec Discord</strong> : votre navigateur s'ouvre sur Discord. Autorisez ObsiLan (seuls votre identifiant et votre nom d'utilisateur sont lus), puis revenez dans l'application.</li>
+      <li>C'est tout. La synchro se fait ensuite automatiquement : à l'ouverture, toutes les minutes, et quelques secondes après chaque modification.</li>
+    </ol>
+    <p>Répétez l'opération sur chaque appareil. L'indicateur en bas de la barre latérale montre l'état : <em>Synchronisé</em>, <em>Synchronisation…</em> ou <em>Hors ligne</em>.</p>
+
+    <h2 id="obsidian">Reprendre des notes Obsidian</h2>
+    <p>ObsiLan utilise la même syntaxe qu'Obsidian (<code>[[liens]]</code>, <code>#tags</code>, en-tête YAML). Sur PC, choisissez simplement le dossier de votre coffre Obsidian au premier lancement. Les réglages d'Obsidian (dossier <code>.obsidian</code>) ne sont pas modifiés.</p>
+
+    <h2 id="maj">Mettre à jour</h2>
+    <p>Téléchargez la nouvelle version et installez-la par-dessus l'ancienne : vos notes et vos réglages sont conservés. Consultez les <a href="notes-de-version.html">notes de version</a> pour voir les nouveautés.</p>
+
+    <h2 id="faq">Questions fréquentes</h2>
+    <h3>Mes notes sont-elles perdues si je désinstalle l'application ?</h3>
+    <p>Non. Les notes sont des fichiers dans votre dossier (<code>Documents\ObsiLan</code> sur PC, <code>Documents/ObsiLan</code> sur Android) et y restent.</p>
+    <h3>Et si je modifie la même note sur deux appareils hors ligne ?</h3>
+    <p>À la synchro, les changements faits à des endroits différents sont fusionnés. Si la même ligne a été modifiée des deux côtés, la note garde une version et l'autre est enregistrée à côté, dans une note « … (conflit date appareil) ». Rien n'est perdu.</p>
+    <h3>Où vont les notes supprimées ?</h3>
+    <p>Dans le dossier caché <code>.trash</code> de votre dossier de notes, comme dans Obsidian.</p>
+  </main>
+
+  <footer class="site">
+    <div class="wrap">
+      <span>© <span class="year">2026</span> ObsiLan</span>
+      <span>
+        <a href="notes-de-version.html">Notes de version</a>
+        <a href="confidentialite.html">Politique de confidentialité</a>
+        <a href="conditions.html">Conditions d'utilisation</a>
+        <a data-link="contact" href="#">Contact</a>
+      </span>
+    </div>
+  </footer>
+</body>
+</html>

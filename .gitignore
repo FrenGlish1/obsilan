@@ -1,0 +1,13 @@
+node_modules/
+dist/
+vault/
+*.log
+livrables/
+
+# Données et secrets : ne jamais publier
+data/
+obsilan.config.json
+*.jks
+*.keystore
+keystore.properties
+.env

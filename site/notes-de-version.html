@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Notes de version — ObsiLan</title>
+  <meta name="description" content="Historique des versions d'ObsiLan et nouveautés." />
+  <link rel="icon" href="assets/logo.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="style.css" />
+  <script src="config.js"></script>
+</head>
+<body>
+  <header class="top">
+    <div class="wrap">
+      <a class="brand" href="./"><img src="assets/logo.svg" alt="" />ObsiLan</a>
+      <nav aria-label="Navigation principale">
+        <a href="./">Accueil</a>
+        <a href="installation.html">Installation</a>
+        <a href="notes-de-version.html" aria-current="page">Nouveautés</a>
+        <a href="confidentialite.html">Confidentialité</a>
+        <a href="conditions.html">Conditions</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="page">
+    <h1>Notes de version</h1>
+    <p class="updated">Toutes les nouveautés, de la plus récente à la plus ancienne. <a data-link="releases" href="#">Télécharger la dernière version</a></p>
+
+    <article class="release">
+      <h2>0.4.0 <span class="badge">DERNIÈRE</span> <time datetime="2026-10-16">16 octobre 2026</time></h2>
+      <h3>Nouveautés</h3>
+      <ul>
+        <li><strong>Synchronisation PC ↔ téléphone</strong> via un serveur privé, avec connexion par Discord.</li>
+        <li>Synchro automatique : à l'ouverture, toutes les minutes et quelques secondes après chaque modification.</li>
+        <li><strong>Fusion automatique</strong> d'une note modifiée sur deux appareils ; en cas de modifications incompatibles, les deux versions sont gardées.</li>
+        <li>Indicateur d'état de la synchro en bas de la barre latérale.</li>
+        <li>Sur téléphone : <strong>appui long</strong> sur une note ou un dossier pour ouvrir son menu.</li>
+      </ul>
+      <h3>Sécurité des données</h3>
+      <ul>
+        <li>Chaque version remplacée ou supprimée est conservée sur le serveur.</li>
+        <li>Connexion chiffrée (HTTPS) et appareils autorisés un par un.</li>
+        <li>Chaque compte a son propre espace de notes, invisible des autres utilisateurs.</li>
+      </ul>
+    </article>
+
+    <article class="release">
+      <h2>0.3.0 <time datetime="2026-10-16">16 octobre 2026</time></h2>
+      <h3>Nouveautés</h3>
+      <ul>
+        <li><strong>Liens entre notes</strong> <code>[[Note]]</code>, avec texte affiché <code>[[Note|texte]]</code> et lien vers un titre <code>[[Note#Titre]]</code>.</li>
+        <li>Auto-complétion des noms de notes après <code>[[</code> et des tags après <code>#</code>.</li>
+        <li>Clic sur un lien pour ouvrir la note ; elle est créée si elle n'existe pas encore.</li>
+        <li><strong>Panneau des rétroliens</strong> : les notes qui pointent vers la note ouverte, avec la ligne concernée.</li>
+        <li><strong>Renommer ou déplacer</strong> une note ou un dossier met à jour tous les liens qui y mènent.</li>
+        <li><strong>Tags</strong> <code>#tag</code> et <code>#tag/sous-tag</code>, y compris dans l'en-tête YAML, et onglet « Tags ».</li>
+      </ul>
+    </article>
+
+    <article class="release">
+      <h2>0.2.0 <time datetime="2026-10-16">16 octobre 2026</time></h2>
+      <h3>Nouveautés</h3>
+      <ul>
+        <li><strong>Applications natives</strong> : installeur Windows (.exe) et application Android (.apk).</li>
+        <li>Les notes sont stockées directement sur l'appareil : tout fonctionne hors ligne.</li>
+        <li>Choix du dossier des notes au premier lancement (compatible avec un coffre Obsidian).</li>
+        <li>Détection des modifications faites par d'autres programmes.</li>
+      </ul>
+      <h3>Améliorations</h3>
+      <ul>
+        <li>L'arborescence décale et relie visuellement le contenu des dossiers.</li>
+      </ul>
+    </article>
+
+    <article class="release">
+      <h2>0.1.0 <time datetime="2026-10-16">16 octobre 2026</time></h2>
+      <h3>Première version</h3>
+      <ul>
+        <li>Notes Markdown rangées en dossiers : créer, renommer, déplacer (glisser-déposer), supprimer (corbeille).</li>
+        <li>Éditeur avec aperçu en direct et mode lecture.</li>
+        <li>Sauvegarde automatique et écritures sécurisées (jamais de fichier à moitié écrit).</li>
+        <li>Recherche plein texte rapide, sans tenir compte des accents.</li>
+        <li>Thème clair et sombre.</li>
+      </ul>
+    </article>
+  </main>
+
+  <footer class="site">
+    <div class="wrap">
+      <span>© <span class="year">2026</span> ObsiLan</span>
+      <span>
+        <a href="notes-de-version.html">Notes de version</a>
+        <a href="confidentialite.html">Politique de confidentialité</a>
+        <a href="conditions.html">Conditions d'utilisation</a>
+        <a data-link="contact" href="#">Contact</a>
+      </span>
+    </div>
+  </footer>
+</body>
+</html>

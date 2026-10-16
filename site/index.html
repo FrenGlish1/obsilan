@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ObsiLan — vos notes, sur PC et téléphone</title>
+  <meta name="description" content="ObsiLan : application de prise de notes Markdown pour Windows et Android, compatible Obsidian, avec liens entre notes, tags et synchronisation privée." />
+  <link rel="icon" href="assets/logo.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="style.css" />
+  <script src="config.js"></script>
+</head>
+<body>
+  <header class="top">
+    <div class="wrap">
+      <a class="brand" href="./"><img src="assets/logo.svg" alt="" />ObsiLan</a>
+      <nav aria-label="Navigation principale">
+        <a href="./" aria-current="page">Accueil</a>
+        <a href="installation.html">Installation</a>
+        <a href="notes-de-version.html">Nouveautés</a>
+        <a href="confidentialite.html">Confidentialité</a>
+        <a href="conditions.html">Conditions</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="wrap hero">
+      <h1>Vos notes, <span>partout</span>,<br />sans rien céder.</h1>
+      <p class="lead">
+        ObsiLan est une application de prise de notes en Markdown pour <strong>Windows</strong> et <strong>Android</strong>.
+        Vos notes sont de simples fichiers, reliées entre elles, et synchronisées entre vos appareils par un serveur privé.
+      </p>
+      <div class="cta">
+        <a class="btn btn-primary" data-link="windows" href="installation.html#windows">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 5.5 10.5 4.4v7.1H3zm8.5-1.2L21 3v8.5h-9.5zM3 12.5h7.5v7.1L3 18.5zm8.5 0H21V21l-9.5-1.3z"/></svg>
+          <span>Télécharger pour Windows<small>Windows 10 et 11 · 2 Mo</small></span>
+        </a>
+        <a class="btn btn-ghost" data-link="android" href="installation.html#android">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.6 9.5 19.4 6.3a.4.4 0 0 0-.7-.4l-1.8 3.2A11 11 0 0 0 12 8a11 11 0 0 0-4.9 1.1L5.3 5.9a.4.4 0 0 0-.7.4l1.8 3.2A9.6 9.6 0 0 0 1.5 17h21a9.6 9.6 0 0 0-4.9-7.5zM7 14.3a1 1 0 1 1 0-2 1 1 0 0 1 0 2zm10 0a1 1 0 1 1 0-2 1 1 0 0 1 0 2z"/></svg>
+          <span>Télécharger pour Android<small>Android 7 et plus · 7 Mo</small></span>
+        </a>
+      </div>
+      <p class="version-note">Version <span data-text="version">0.4.0</span> · gratuite · sans publicité · <a href="installation.html">guide d'installation</a></p>
+      <img class="shot" src="assets/shot-editeur.png" alt="ObsiLan : arborescence des notes à gauche, note « Lancer mon potager » avec liens et tags, panneau des rétroliens en bas." width="1200" height="800" />
+    </div>
+
+    <section class="alt">
+      <div class="wrap">
+        <h2>Tout ce qu'il faut, rien de trop</h2>
+        <p class="section-lead">Une application légère pensée pour écrire vite et retrouver ses idées.</p>
+        <div class="grid">
+          <div class="card"><div class="icon">📝</div><h3>Markdown en direct</h3><p>Titres, gras, listes, tableaux, code… mis en forme pendant que vous écrivez.</p></div>
+          <div class="card"><div class="icon">🔗</div><h3>Liens entre notes</h3><p>Écrivez <code>[[Une note]]</code> pour relier vos idées. Renommer une note met à jour tous ses liens.</p></div>
+          <div class="card"><div class="icon">↩️</div><h3>Rétroliens</h3><p>Sous chaque note, voyez quelles autres notes y font référence, avec le contexte.</p></div>
+          <div class="card"><div class="icon">#️⃣</div><h3>Tags</h3><p><code>#projet</code>, <code>#projet/maison</code>… et un onglet pour parcourir vos notes par tag.</p></div>
+          <div class="card"><div class="icon">🔍</div><h3>Recherche instantanée</h3><p>Dans toutes vos notes, sans tenir compte des accents ni des majuscules.</p></div>
+          <div class="card"><div class="icon">🔄</div><h3>Synchronisation</h3><p>PC et téléphone restent à jour. Hors ligne, tout fonctionne ; la synchro reprend toute seule.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap split">
+        <div>
+          <h2>Vos fichiers vous appartiennent</h2>
+          <p class="section-lead">
+            Chaque note est un fichier <code>.md</code> ordinaire dans un dossier de votre appareil.
+            Vous pouvez les ouvrir avec n'importe quel éditeur, ou avec Obsidian : la syntaxe est la même.
+          </p>
+          <ul>
+            <li><strong>Aucune perte de données</strong> : écritures sécurisées, corbeille, versions conservées.</li>
+            <li><strong>Conflits gérés</strong> : si une note est modifiée sur deux appareils, les changements sont fusionnés ; sinon les deux versions sont gardées.</li>
+            <li><strong>Aucun pistage</strong> : ni publicité, ni statistiques, ni service tiers caché.</li>
+          </ul>
+        </div>
+        <img class="shot" src="assets/shot-tags.png" alt="ObsiLan en thème clair : onglet Tags avec le tag #jardin, note « Calendrier des semis » en mode lecture." width="1200" height="800" loading="lazy" />
+      </div>
+    </section>
+
+    <section class="alt">
+      <div class="wrap">
+        <h2>Prêt à essayer ?</h2>
+        <p class="section-lead">L'installation prend une minute. Le guide explique tout, étape par étape.</p>
+        <a class="btn btn-primary" href="installation.html">Voir le guide d'installation</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site">
+    <div class="wrap">
+      <span>© <span class="year">2026</span> ObsiLan</span>
+      <span>
+        <a href="notes-de-version.html">Notes de version</a>
+        <a href="confidentialite.html">Politique de confidentialité</a>
+        <a href="conditions.html">Conditions d'utilisation</a>
+        <a data-link="contact" href="#">Contact</a>
+      </span>
+    </div>
+  </footer>
+</body>
+</html>

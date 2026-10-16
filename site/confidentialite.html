@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Politique de confidentialité — ObsiLan</title>
+  <meta name="description" content="Quelles données ObsiLan traite, pourquoi, où elles sont stockées et quels sont vos droits." />
+  <link rel="icon" href="assets/logo.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="style.css" />
+  <script src="config.js"></script>
+</head>
+<body>
+  <header class="top">
+    <div class="wrap">
+      <a class="brand" href="./"><img src="assets/logo.svg" alt="" />ObsiLan</a>
+      <nav aria-label="Navigation principale">
+        <a href="./">Accueil</a>
+        <a href="installation.html">Installation</a>
+        <a href="notes-de-version.html">Nouveautés</a>
+        <a href="confidentialite.html" aria-current="page">Confidentialité</a>
+        <a href="conditions.html">Conditions</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="page">
+    <h1>Politique de confidentialité</h1>
+    <p class="updated">Dernière mise à jour : 16 octobre 2026</p>
+
+    <p>
+      Cette politique explique quelles données sont traitées lorsque vous utilisez l'application ObsiLan
+      (Windows et Android) et son service de synchronisation, pourquoi, et quels sont vos droits.
+      En résumé : <strong>aucune publicité, aucune statistique, aucun pistage</strong>. Vos notes ne servent qu'à vous.
+    </p>
+
+    <h2>1. Responsable du traitement</h2>
+    <p>
+      Le service de synchronisation est exploité à titre personnel et non commercial par
+      <strong>Deléglise--Gavelle Mathis</strong>, joignable à l'adresse
+      <a data-link="contact" href="#"><span data-text="contact">mathisdeleglise2648@gmail.com</span></a>.
+    </p>
+
+    <h2>2. Sans synchronisation : rien ne quitte votre appareil</h2>
+    <p>
+      Si vous n'activez pas la synchronisation, ObsiLan fonctionne entièrement en local. Vos notes restent des fichiers
+      sur votre appareil ; l'application n'envoie aucune donnée, nulle part.
+    </p>
+
+    <h2>3. Données traitées avec la synchronisation</h2>
+    <div class="table-scroll">
+      <table>
+        <thead>
+          <tr><th>Donnée</th><th>Pourquoi</th><th>Durée de conservation</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Contenu et noms de vos notes et dossiers</td>
+            <td>Les synchroniser entre vos appareils (c'est le service demandé)</td>
+            <td>Tant que le compte est actif</td>
+          </tr>
+          <tr>
+            <td>Anciennes versions des notes modifiées ou supprimées</td>
+            <td>Éviter toute perte de données et permettre la fusion des modifications</td>
+            <td>Tant que le compte est actif, sauf demande de suppression</td>
+          </tr>
+          <tr>
+            <td>Identifiant et nom d'utilisateur Discord</td>
+            <td>Vous identifier et vérifier que votre compte est autorisé</td>
+            <td>Tant que le compte est actif</td>
+          </tr>
+          <tr>
+            <td>Nom de l'appareil (ex. « PC Windows »), dates de connexion et de dernière utilisation</td>
+            <td>Gérer les appareils connectés et pouvoir en déconnecter un</td>
+            <td>Jusqu'à la déconnexion de l'appareil</td>
+          </tr>
+          <tr>
+            <td>Adresse IP et journaux techniques du serveur</td>
+            <td>Faire fonctionner le service et le protéger contre les abus</td>
+            <td>30 jours au plus</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p>
+      La base légale de ces traitements est l'exécution du service que vous demandez en activant la synchronisation
+      (article 6.1.b du RGPD) et, pour les journaux techniques, l'intérêt légitime à assurer la sécurité du service (article 6.1.f).
+    </p>
+    <p>ObsiLan ne collecte <strong>ni adresse e-mail, ni mot de passe, ni données de localisation, ni contacts</strong>, et ne fait aucun profilage.</p>
+
+    <h2>4. Où sont stockées les données ?</h2>
+    <p>
+      Sur un serveur personnel situé en France, au domicile de l'éditeur. Les échanges entre l'application et le serveur
+      sont chiffrés (HTTPS). <strong>Chaque compte dispose de son propre espace</strong> : les notes d'un utilisateur ne sont
+      jamais visibles par les autres utilisateurs du service. Les données ne sont ni vendues, ni louées, ni partagées avec qui que ce soit, et ne sont
+      utilisées à aucune autre fin que la synchronisation.
+    </p>
+
+    <h2>5. Services tiers</h2>
+    <ul>
+      <li>
+        <strong>Discord</strong> sert uniquement à la connexion. ObsiLan demande la seule autorisation « identify »
+        (identifiant et nom d'utilisateur) : ObsiLan n'a accès ni à vos messages, ni à vos serveurs, ni à votre e-mail.
+        La connexion se déroule sur le site de Discord, selon sa propre politique de confidentialité.
+      </li>
+      <li>
+        <strong>DuckDNS</strong> et <strong>Let's Encrypt</strong> fournissent l'adresse du serveur et son certificat de sécurité.
+        Ils ne reçoivent aucune de vos données.
+      </li>
+      <li>
+        <strong>GitHub</strong> héberge ce site et les fichiers d'installation. GitHub peut enregistrer des données techniques
+        de visite (adresse IP) selon sa propre politique. Ce site n'utilise ni cookie, ni outil de statistiques.
+      </li>
+    </ul>
+
+    <h2>6. Sécurité</h2>
+    <ul>
+      <li>Connexion chiffrée de bout en bout entre l'appareil et le serveur (HTTPS, certificat Let's Encrypt).</li>
+      <li>Accès réservé aux comptes Discord explicitement autorisés par l'éditeur.</li>
+      <li>Espaces séparés : chaque compte n'accède qu'à ses propres notes et versions.</li>
+      <li>Jetons de connexion stockés sur le serveur sous forme d'empreinte, inutilisables en cas de vol du fichier.</li>
+    </ul>
+    <p>
+      Les notes ne sont pas chiffrées sur le serveur lui-même : l'éditeur, qui administre la machine, pourrait techniquement y accéder.
+      Il s'engage à ne pas le faire, sauf demande de votre part (assistance) ou obligation légale.
+    </p>
+
+    <h2>7. Vos droits</h2>
+    <p>
+      Conformément au RGPD et à la loi « Informatique et Libertés », vous pouvez à tout moment demander l'accès à vos données,
+      leur rectification, leur suppression, leur portabilité, ou vous opposer à leur traitement, en écrivant à
+      <a data-link="contact" href="#"><span data-text="contact">mathisdeleglise2648@gmail.com</span></a>. Une réponse vous sera apportée dans un délai d'un mois.
+    </p>
+    <p>
+      <strong>Portabilité</strong> : vos notes sont déjà de simples fichiers Markdown sur vos appareils ; vous les avez toujours en votre possession.
+      <strong>Arrêt</strong> : touchez « Se déconnecter » dans la fenêtre de synchronisation pour déconnecter un appareil, puis demandez la suppression
+      de vos données serveur par e-mail.
+    </p>
+    <p>
+      Si vous estimez que vos droits ne sont pas respectés, vous pouvez adresser une réclamation à la CNIL (<a href="https://www.cnil.fr" rel="noopener">www.cnil.fr</a>).
+    </p>
+
+    <h2>8. Mineurs</h2>
+    <p>Le service s'adresse aux personnes autorisées à utiliser Discord, soit 15 ans et plus en France sans accord parental.</p>
+
+    <h2>9. Modifications</h2>
+    <p>
+      Cette politique peut évoluer, par exemple lors de l'ajout d'une fonctionnalité. La date de mise à jour figure en haut de la page ;
+      les changements importants seront signalés dans les <a href="notes-de-version.html">notes de version</a>.
+    </p>
+  </main>
+
+  <footer class="site">
+    <div class="wrap">
+      <span>© <span class="year">2026</span> ObsiLan</span>
+      <span>
+        <a href="notes-de-version.html">Notes de version</a>
+        <a href="confidentialite.html">Politique de confidentialité</a>
+        <a href="conditions.html">Conditions d'utilisation</a>
+        <a data-link="contact" href="#">Contact</a>
+      </span>
+    </div>
+  </footer>
+</body>
+</html>
